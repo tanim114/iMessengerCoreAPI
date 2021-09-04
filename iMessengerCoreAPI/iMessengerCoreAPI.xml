@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>iMessengerCoreAPI</name>
+    </assembly>
+    <members>
+        <member name="T:iMessengerCoreAPI.Controllers.RGDialogsClientsController">
+            <summary>
+            RGDialogsClients is a .NET Core 5 based Web APIcontroller 
+            </summary>
+        </member>
+        <member name="M:iMessengerCoreAPI.Controllers.RGDialogsClientsController.FindADialogByClients(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            An API method of finding a dialogue with given client identifiers
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST api/FindADialogByClients
+                {        
+                  "4b6a6b9a-2303-402a-9970-6e71f4a47151",
+                  "7de3299b-2796-4982-a85b-2d6d1326396e",
+                  "50454d55-a73c-4cbc-be25-3c5729dcb82b"        
+                }
+            </remarks>
+            <param name="ids"> A collection of clients' Identifiers</param> 
+            <response code="200">Returns a dialog identifier, only if all the given clients's Identifiers are asociated with a dialog. Otherwise, returns an empty GUID</response>
+        </member>
+        <member name="M:iMessengerCoreAPI.Models.RGDialogsClients.GetDialogByAssociatedClients(System.Collections.Generic.List{System.Guid})">
+            <summary>
+            Accepts a list of clients Identifiers client identifiers for whom it is necessary to find a dialogue.
+            It searches if these clients associate with a dialog.
+            </summary>
+            <param name="clientsIDs"></param>
+            <returns>the either a dialog identifier or an empty GUID</returns>
+        </member>
+    </members>
+</doc>
